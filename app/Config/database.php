@@ -67,19 +67,7 @@
 class DATABASE_CONFIG {
 
     public $default = array();
-
-    public function __construct() {
-        $this->default = array(
-            'datasource' => 'Database/Mysql',
-            'persistent' => false,
-            'host' => getenv('DB_HOST'),
-            'login' => getenv('DB_USER'),
-            'password' => getenv('DB_PASSWORD'),
-            'database' => getenv('DB_NAME'),
-            'prefix' => '',
-            'encoding' => 'utf8',
-        );
-    }
+    public $wz = array();
 
 	public $test = array(
 		'datasource' => 'Database/Mysql',
@@ -95,4 +83,18 @@ class DATABASE_CONFIG {
 		//		PDO::ATTR_STRINGIFY_FETCHES => true
 		//	)
 	);
+
+    public function __construct() {
+        $this->default = array(
+            'datasource' => 'Database/Mysql',
+            'persistent' => false,
+            'host' => getenv('DB_HOST'),
+            'login' => getenv('DB_USER'),
+            'password' => getenv('DB_PASSWORD'),
+            'database' => getenv('DB_NAME'),
+            'prefix' => '',
+            'encoding' => 'utf8',
+        );
+        $this->wz = $this->default;
+    }
 }
