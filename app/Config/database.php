@@ -69,10 +69,10 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'user',
-		'password' => 'password',
-		'database' => 'database_name',
+		'host' => getenv('DB_HOST'),
+		'login' => getenv('DB_USER'),
+		'password' => getenv('DB_PASSWORD'),
+		'database' => getenv('DB_NAME'),
 		'prefix' => '',
 		//'encoding' => 'utf8',
 
