@@ -66,25 +66,20 @@
  */
 class DATABASE_CONFIG {
 
-	public $default = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => getenv('DB_HOST'),
-		'login' => getenv('DB_USER'),
-		'password' => getenv('DB_PASSWORD'),
-		'database' => getenv('DB_NAME'),
-		'prefix' => '',
-		//'encoding' => 'utf8',
+    public $default = array();
 
-		// PDO MySQL/SQLite Driver had the following backward incompatible changes in PHP 8.1
-		// * https://www.php.net/manual/en/migration81.incompatible.php#migration81.incompatible.pdo.mysql
-		// * https://www.php.net/manual/en/migration81.incompatible.php#migration81.incompatible.pdo.sqlite
-		// If under PHP 8.1 and didn't use the following flags, adding them will cause integer and float columns
-		// in the result set to be strings as before.
-		//	'flags' => array(
-		//		PDO::ATTR_STRINGIFY_FETCHES => true
-		//	)
-	);
+    public function __construct() {
+        $this->default = array(
+            'datasource' => 'Database/Mysql',
+            'persistent' => false,
+            'host' => getenv('DB_HOST'),
+            'login' => getenv('DB_USER'),
+            'password' => getenv('DB_PASSWORD'),
+            'database' => getenv('DB_NAME'),
+            'prefix' => '',
+            'encoding' => 'utf8',
+        );
+    }
 
 	public $test = array(
 		'datasource' => 'Database/Mysql',
